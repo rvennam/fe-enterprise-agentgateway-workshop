@@ -1,5 +1,10 @@
 # Changelog
 
+0.9.6 - (5-21-26)
+---
+- `claude-code.md`: extend lab to cover both Claude Max / Team Subscription (Option A) and Direct API Key (Option B)
+- `README.md`: add new **Agent Harnesses** section; move `claude-code.md` under it; remove from **Agent Frameworks**
+
 0.9.5 - (5-19-26)
 ---
 - Add new doc: `system-requirements.md` — cloud-agnostic system requirements (Kubernetes/Helm/Gateway API/Istio versions, POC and Prod cluster sizing, control-plane and proxy pod resource recommendations, `EnterpriseAgentgatewayParameters` + `Gateway` examples, shared extension server footprint) aligned to `v2026.5.0`
