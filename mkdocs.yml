@@ -27,6 +27,7 @@ theme:
   name: material
   logo: images/agentgateway-architecture.gif
   favicon: images/agentgateway-architecture.gif
+  font: false
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
@@ -34,15 +35,15 @@ theme:
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
@@ -103,6 +104,9 @@ markdown_extensions:
 plugins:
   - same-dir
   - search
+
+extra_css:
+  - stylesheets/solo-brand.css
 
 extra:
   social:
