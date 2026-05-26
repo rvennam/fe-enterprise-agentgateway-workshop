@@ -25,6 +25,7 @@ exclude_docs: |
 
 theme:
   name: material
+  custom_dir: overrides
   logo: images/agentgateway-architecture.gif
   favicon: images/agentgateway-architecture.gif
   font: false
@@ -50,7 +51,6 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
-    - navigation.tabs
     - navigation.sections
     - navigation.expand
     - navigation.indexes

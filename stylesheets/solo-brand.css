@@ -187,10 +187,153 @@ code, pre, kbd, .md-typeset code, .md-typeset pre {
   background-color: rgba(255, 255, 255, 0.18);
 }
 
-/* ── Footer ──────────────────────────────────────────────────────────── */
-.md-footer {
-  background-color: var(--solo-heading);
+/* ── Workshop announcement banner ────────────────────────────────────── */
+.md-banner {
+  background-color: var(--solo-primary-tint);
+  color: var(--solo-heading);
+  border-bottom: 1px solid rgba(21, 139, 194, 0.25);
 }
+[data-md-color-scheme="slate"] .md-banner {
+  background-color: rgba(96, 181, 224, 0.12);
+  color: #e6f1f8;
+  border-bottom-color: rgba(96, 181, 224, 0.25);
+}
+.md-banner__inner {
+  font-size: 0.78rem;
+  padding: 0.6rem 0;
+  text-align: center;
+}
+.workshop-announce {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.workshop-announce__badge {
+  display: inline-block;
+  background-color: var(--solo-primary);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* ── Prev/Next stepper (the journey) ─────────────────────────────────── */
+/* Pull the prev/next nav out of the dark footer band and present it as
+   two prominent cards so it reads as a guided journey, not footer chrome. */
+.md-footer__inner {
+  background-color: var(--md-default-bg-color);
+  padding: 1.5rem 0;
+  gap: 1rem;
+}
+[data-md-color-scheme="slate"] .md-footer__inner {
+  background-color: var(--md-default-bg-color);
+}
+
+.md-footer__link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid rgba(21, 139, 194, 0.2);
+  border-radius: 8px;
+  color: var(--solo-heading);
+  opacity: 1;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+  text-decoration: none;
+  max-width: none;
+}
+[data-md-color-scheme="slate"] .md-footer__link {
+  background-color: rgba(96, 181, 224, 0.06);
+  border-color: rgba(96, 181, 224, 0.25);
+  color: #fff;
+}
+.md-footer__link:hover,
+.md-footer__link:focus {
+  border-color: var(--solo-primary);
+  box-shadow: 0 4px 14px rgba(21, 139, 194, 0.18);
+  transform: translateY(-1px);
+  opacity: 1;
+}
+[data-md-color-scheme="slate"] .md-footer__link:hover {
+  border-color: var(--solo-primary-dark);
+  box-shadow: 0 4px 14px rgba(96, 181, 224, 0.18);
+}
+
+.md-footer__link--prev { justify-content: flex-start; }
+.md-footer__link--next { justify-content: flex-end; text-align: right; }
+
+.md-footer__direction {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--solo-primary);
+  opacity: 1;
+}
+[data-md-color-scheme="slate"] .md-footer__direction {
+  color: var(--solo-primary-dark);
+}
+.md-footer__direction::before {
+  content: "";
+}
+.md-footer__link--prev .md-footer__direction::before { content: "Previous lab"; }
+.md-footer__link--next .md-footer__direction::before { content: "Next lab"; }
+.md-footer__link--prev .md-footer__direction,
+.md-footer__link--next .md-footer__direction {
+  font-size: 0;
+}
+.md-footer__link--prev .md-footer__direction::before,
+.md-footer__link--next .md-footer__direction::before {
+  font-size: 0.7rem;
+}
+
+.md-footer__title {
+  flex: 1;
+}
+.md-footer__title .md-ellipsis {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--solo-heading);
+  margin-top: 0.15rem;
+}
+[data-md-color-scheme="slate"] .md-footer__title .md-ellipsis {
+  color: #fff;
+}
+
+.md-footer__button {
+  background-color: var(--solo-primary-tint);
+  color: var(--solo-primary);
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  flex-shrink: 0;
+}
+[data-md-color-scheme="slate"] .md-footer__button {
+  background-color: rgba(96, 181, 224, 0.15);
+  color: var(--solo-primary-dark);
+}
+.md-footer__link:hover .md-footer__button {
+  background-color: var(--solo-primary);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .md-footer__inner { flex-direction: column; }
+  .md-footer__link--next { text-align: left; justify-content: flex-start; }
+}
+
+/* ── Footer meta band ────────────────────────────────────────────────── */
 .md-footer-meta {
-  background-color: #0f1d2c;
+  background-color: var(--solo-heading);
 }
